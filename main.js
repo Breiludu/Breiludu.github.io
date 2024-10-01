@@ -33,10 +33,10 @@ function addEntry() {
     });
 
     var newHTML = ""
-    newHTML += '<div class="entry"> <span>';
+    newHTML += '<div class="entry"> <div class="entry_text"> <span>';
     newHTML += dec + '.' + float + ' ' + people;
     newHTML += '</span> <span>';
     newHTML += divided.toFixed(2) + " pers.";
-    newHTML += '</span> </div>';
+    newHTML += '</span> </div> <div class="button_container"> <button></button> </div>';
     entrys.innerHTML += newHTML;
 }
