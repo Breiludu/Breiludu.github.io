@@ -1,0 +1,43 @@
+/* * {
+    border: solid red 1px;
+} */
+
+body {
+    background-color: rgb(30, 30, 30);
+}
+
+#prompt_container {
+    background-color: rgb(50, 50, 50);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 90vw;
+    margin: 50px 5vw 0 5vw;
+    height: 150px;
+
+    border-radius: 20px;
+}
+
+#prompt_container > #prompt {
+    background-color: rgb(30, 30, 30);
+    width: 70vw;
+    height: 50%;
+    padding-left: 30px;
+
+    font-size: 8vh;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+
+    border: none;
+    border-radius: 100px 0 0 100px;
+
+}
+
+#prompt_container > button {
+    width: 10vw;
+    height: 50%;
+
+    border: none;
+    border-radius: 0 100px 100px 0;
+}
