@@ -78,6 +78,31 @@ body {
     width: 100%;
 }
 
+/* ------- */
+/* Results */
+/* ------- */
+
+#results {
+    background-color: rgb(50, 50, 50);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 80vw;
+    margin: 50px auto 0 auto;
+    height: 15vh;
+
+    border-radius: 20px;
+}
+
+#results > .person {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    padding: 5px 10px;
+
+    border-radius: 20px;
+}
+
 /* ------ */
 /* Entrys */
 /* ------ */

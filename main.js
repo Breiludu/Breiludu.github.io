@@ -30,8 +30,8 @@ function addEntry() {
 
     var divided = parseFloat(dec + '.' + float) / people.length
     people.split('').forEach(char => {
-        if (total["char"] === undefined) {total["char"] = divided}
-        else {total["char"] += divided}
+        if (total[char] === undefined) {total[char] = divided}
+        else {total[char] += divided}
     });
 
     var newHTML = ""
@@ -44,6 +44,18 @@ function addEntry() {
 
     prompt.value = "";
     entryIdCount += 1;
+    updateResults()
+}
+
+function updateResults() {
+    var results = document.getElementById("results");
+    let newHTML = "";
+    Object.keys(total).forEach(element => {
+        newHTML += '<div class="person"><span>';
+        newHTML += element + ': ' + total[element].toFixed(2);
+        newHTML += '</span></div>';
+    });
+    results.innerHTML = newHTML
 }
 
 function removeEntry(entryIdNumber) {
