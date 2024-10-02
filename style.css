@@ -12,15 +12,15 @@ body {
     justify-content: space-around;
 
     width: 90vw;
-    margin: 50px 5vw 0 5vw;
-    height: 18vh;
+    margin: 50px auto 0 auto;
+    height: 15vh;
 
     border-radius: 20px;
 }
 
 #prompt_container > #prompt {
     background-color: rgb(30, 30, 30);
-    width: 70vw;
+    width: 80%;
     height: 50%;
     padding-left: 30px;
 
@@ -40,7 +40,7 @@ body {
 #prompt_container > button {
     position: relative;
     background-color: darkcyan;
-    width: 10vw;
+    width: 10%;
     height: 50%;
     padding: 0;
 
@@ -88,15 +88,15 @@ body {
     flex-direction: column;
     align-items: center;
 
-    width: 40vw;
-    margin: 50px 30vw 0 30vw;
+    width: 800px;
+    margin: 50px auto 0 auto;
     border-radius: 20px;
 }
 
 .entry {
     display: flex;
     justify-content: space-around;
-    width: 40vw;
+    width: 90%;
 }
 
 .entry_text {
@@ -105,7 +105,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    width: 30vw;
+    width: 80%;
     height: 5vh;
     margin: 20px 0 20px 0;
 
@@ -126,17 +126,17 @@ body {
     align-items: center;
 }
 
-.entry > .button_container > button {
+.entry > .button_container > #remove_button {
     position: relative;
     background-color: rgb(179, 53, 47);
     color: white;
-    width: 2vw;
-    height: 2vw;
+    width: 4vh;
+    height: 4vh;
     border-radius: 100px;
     border: solid rgb(179, 53, 47) 4px;
 }
 
-.entry > .button_container > button::after {
+.entry > .button_container > #remove_button::after {
     position: absolute;
     content: "";
     background-color: rgb(232, 69, 61);
@@ -151,6 +151,22 @@ body {
     transition: ease-in 100ms all;
 }
 
-.entry > .button_container > button:hover::after {
+.entry > .button_container > #remove_button:hover::after {
     transform: scale(100%, 100%);
+}
+
+/* ---------- */
+/* Adaptación */
+/* ---------- */
+
+@media (max-width: 950px) {
+    #entry_container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 645px) {
+    .entry_text {
+        flex-direction: column;
+    }
 }

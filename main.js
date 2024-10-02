@@ -2,6 +2,8 @@ var total = {
 
 }
 
+var entryIdCount = 0;
+
 function addEntry() {
     var entrys = document.getElementById("entry_container");
     var prompt = document.getElementById("prompt");
@@ -33,10 +35,18 @@ function addEntry() {
     });
 
     var newHTML = ""
-    newHTML += '<div class="entry"> <div class="entry_text"> <span>';
+    newHTML += '<div class="entry" id="getEntry' + entryIdCount + '"> <div class="entry_text"> <span>';
     newHTML += dec + '.' + float + ' ' + people;
     newHTML += '</span> <span>';
     newHTML += divided.toFixed(2) + " pers.";
-    newHTML += '</span> </div> <div class="button_container"> <button></button> </div>';
+    newHTML += '</span> </div> <div class="button_container"> <button id="remove_button" onclick="removeEntry('+ entryIdCount +');"></button> </div>';
     entrys.innerHTML += newHTML;
+
+    prompt.value = "";
+    entryIdCount += 1;
+}
+
+function removeEntry(entryIdNumber) {
+    var entry = document.getElementById("getEntry" + entryIdNumber);
+    entry.remove();
 }
