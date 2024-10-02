@@ -168,5 +168,7 @@ body {
 @media (max-width: 645px) {
     .entry_text {
         flex-direction: column;
+        justify-content: space-around;
+        height: 50px;
     }
 }
