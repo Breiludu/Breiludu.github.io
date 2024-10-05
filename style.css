@@ -1,6 +1,7 @@
 body {
     background-color: rgb(30, 30, 30);
 }
+
 /* ------ */
 /* PORMPT */
 /* ------ */
@@ -100,7 +101,7 @@ body {
     color: white;
     padding: 5px 10px;
 
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 /* ------ */

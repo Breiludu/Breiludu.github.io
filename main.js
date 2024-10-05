@@ -7,7 +7,7 @@ var entryIdCount = 0;
 function addEntry() {
     var entrys = document.getElementById("entry_container");
     var prompt = document.getElementById("prompt");
-    if (!(/^\d*[.,]?\d*\s[A-Za-z]*$/.test(prompt.value))) {return;}
+    if (!(/^\d*[.,]?\d*\s?[A-Za-z]*$/.test(prompt.value))) {return;}
 
     var dec = "";
     var float = "";
@@ -44,21 +44,40 @@ function addEntry() {
 
     prompt.value = "";
     entryIdCount += 1;
-    updateResults()
+    updateResults();
+}
+
+function removeEntry(entryIdNumber) {
+    var entry = document.getElementById("getEntry" + entryIdNumber);
+
+    let entry_info = entry.getElementsByTagName("span")[0].innerHTML.split(" ");
+    let temp_value = entry_info[0];
+    let temp_people = entry_info[1];
+
+    let temp_divided = temp_value / temp_people.length
+    temp_people.split('').forEach(char => {
+        total[char] -= temp_divided
+    });
+
+    entry.remove();
+    updateResults();
 }
 
 function updateResults() {
     var results = document.getElementById("results");
     let newHTML = "";
     Object.keys(total).forEach(element => {
-        newHTML += '<div class="person"><span>';
-        newHTML += element + ': ' + total[element].toFixed(2);
-        newHTML += '</span></div>';
+        if (total[element] > 0) {
+            newHTML += '<div class="person"><span>';
+            newHTML += element + ': ' + total[element].toFixed(2);
+            newHTML += '</span></div>';
+        }
     });
     results.innerHTML = newHTML
 }
 
-function removeEntry(entryIdNumber) {
-    var entry = document.getElementById("getEntry" + entryIdNumber);
-    entry.remove();
-}
+(() => {
+    window.addEventListener("keydown", key => {
+        if (key.key === "Enter") {addEntry();}
+    });
+})();
