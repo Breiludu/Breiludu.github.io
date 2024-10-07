@@ -1,0 +1,33 @@
+:root {
+    --dark-blue: #001F3F;
+    --mid-blue: #3A6D8C;
+    --light-blue: #6A9AB0;
+    --white: #EAD8B1;
+}
+
+body {
+    background-color: var(--dark-blue);
+    font-size: 8vh;
+}
+
+.row {
+    background-color: var(--dark-blue);
+    display: block;
+
+    width: 90vw;
+    min-height: 2.5rem;
+    margin: 0 auto;
+
+    border: none;
+    border: solid 3px var(--mid-blue);
+    border-radius: 3px;
+    resize: none;
+
+    color: var(--white);
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.row:focus {
+    outline: none;
+}

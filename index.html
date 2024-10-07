@@ -5,17 +5,31 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="stylesheet" href="./style.css" type="text/css">
         <script src="./main.js" type="text/javascript"></script>
-        <title>Test</title>
+        <title>Ticket Div</title>
     </head>
     <body>
         <div id="prompt_container">
             <input type="text" id="prompt" onformchange="addEntry();">
             <button onclick="addEntry();"><span></span></button>
         </div>
-        <div id="results">
-            <!-- <div class="person">
-                <span>a: 23.452312312312</span>
-            </div> -->
+        <div id="res_sum_cont">
+            <div id="results">
+                <div class="person">
+                    <span>a: 23.45</span>
+                </div>
+                <div class="person">
+                    <span>a: 23.45</span>
+                </div>
+                <div class="person">
+                    <span>a: 23.45</span>
+                </div>
+                <div class="person">
+                    <span>a: 23.45</span>
+                </div>
+            </div>
+            <div id="sum">
+                <span>Total: 45.89</span>
+            </div>
         </div>
         <div id="entry_container">
             <!-- <div class="entry" id ="getEntry0">

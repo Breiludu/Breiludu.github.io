@@ -35,7 +35,8 @@ body {
 }
 
 #prompt_container > #prompt:focus {
-    border: solid lightcyan 1px;
+    border: solid lightcyan 3px;
+    outline: none;
 }
 
 #prompt_container > button {
@@ -47,6 +48,11 @@ body {
 
     border: none;
     border-radius: 0 100px 100px 0;
+}
+
+#prompt_container > button:focus {
+    outline: none;
+    border: solid lightcyan 1px;
 }
 
 #prompt_container > button > span {
@@ -83,14 +89,22 @@ body {
 /* Results */
 /* ------- */
 
+#res_sum_cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    margin: 50px auto;
+    width: 80vw;
+}
+
 #results {
     background-color: rgb(50, 50, 50);
     display: flex;
     align-items: center;
     justify-content: space-around;
 
-    width: 80vw;
-    margin: 50px auto 0 auto;
+    width: 70%;
     height: 15vh;
 
     border-radius: 20px;
@@ -100,6 +114,31 @@ body {
     background-color: rgb(30, 30, 30);
     color: white;
     padding: 5px 10px;
+    text-align: center;
+
+    border-radius: 5px;
+}
+
+#sum {
+    background-color: rgb(50, 50, 50);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 10%;
+    height: 15vh;
+
+    border-radius: 20px;
+}
+
+#sum > span {
+    background-color: rgb(30, 30, 30);
+    color: white;
+
+    padding: 5px 10px;
+    width: 70%;
+
+    text-align: center;
 
     border-radius: 5px;
 }
