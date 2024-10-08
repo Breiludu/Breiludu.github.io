@@ -254,6 +254,20 @@ body {
 }
 
 @media (max-width: 720px) {
+    #results {
+        flex-direction: column;
+        height: auto;
+        width: 50%;
+    }
+
+    #results > .person {
+        margin: 5px 0;
+    }
+
+    #sum {
+        width: 40%;
+    }
+
     .entry_text {
         flex-direction: column;
         justify-content: space-around;
