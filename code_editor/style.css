@@ -1,33 +1,43 @@
 :root {
-    --dark-blue: #001F3F;
-    --mid-blue: #3A6D8C;
-    --light-blue: #6A9AB0;
-    --white: #EAD8B1;
+    
 }
 
 body {
-    background-color: var(--dark-blue);
+    background-color: rgb(30, 30, 30);
+    
+    color: antiquewhite;
     font-size: 8vh;
 }
 
-.row {
-    background-color: var(--dark-blue);
-    display: block;
-
+#main_cont {
     width: 90vw;
-    min-height: 2.5rem;
+    height: 90vh;
     margin: 0 auto;
 
-    border: none;
-    border: solid 3px var(--mid-blue);
-    border-radius: 3px;
-    resize: none;
-
-    color: var(--white);
-    font-size: 2rem;
-    text-decoration: none;
+    /* border: solid white 1px; */
 }
 
-.row:focus {
-    outline: none;
+#hist_cont {
+    height: 90%;
+
+    font-size: 2rem;
+}
+
+#hist_cont > span {
+    display: block;
+}
+
+#prompt {
+    background-color: rgb(50, 50, 50);
+    display: flex;
+    align-items: center;
+    resize: none;
+
+    width: calc(100% - 1rem);
+    height: 10%;
+    padding-left: 1rem;
+
+    font-size: 2rem;
+    border-radius: 10px;
+    border-top: solid grey 2px;
 }
