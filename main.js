@@ -1,16 +1,16 @@
-var total = {
+let total = {
 
 }
 
-var entryIdCount = 0;
+let entryIdCount = 0;
 
 function addEntry() {
-    var entrys = document.getElementById("entry_container");
-    var prompt = document.getElementById("prompt");
+    let entrys = document.getElementById("entry_container");
+    let prompt = document.getElementById("prompt");
     if (!(/^\d*[.,]?\d*\s?[A-Za-z]+$/.test(prompt.value))) {return;}
 
-    var number = "";
-    var people = "";
+    let number = "";
+    let people = "";
     prompt.value.split('').forEach(char => {
         if ((/^[A-Za-z]$/).test(char)) {
             people += char;
@@ -19,13 +19,13 @@ function addEntry() {
         }
     });
 
-    var divided = parseFloat(number) / people.length
+    let divided = Math.round((parseFloat(number) / people.length)*100)/100
     people.split('').forEach(char => {
         if (total[char] === undefined) {total[char] = divided}
         else {total[char] += divided}
     });
 
-    var newHTML = ""
+    let newHTML = ""
     newHTML += '<div class="entry" id="getEntry' + entryIdCount + '"> <div class="entry_text"> <span>';
     newHTML += number + ' ' + people;
     newHTML += '</span> <span>';
@@ -39,15 +39,14 @@ function addEntry() {
 }
 
 function removeEntry(entryIdNumber) {
-    var entry = document.getElementById("getEntry" + entryIdNumber);
+    let entry = document.getElementById("getEntry" + entryIdNumber);
 
-    let entry_info = entry.getElementsByTagName("span")[0].innerHTML.split(" ");
-    let temp_value = entry_info[0];
-    let temp_people = entry_info[1];
+    let entry_info = entry.getElementsByTagName("span");
+    let divided = entry_info[1].innerHTML.split(" ")[0];
+    let people = entry_info[0].innerHTML.split(" ")[1];
 
-    let temp_divided = temp_value / temp_people.length
-    temp_people.split('').forEach(char => {
-        total[char] -= temp_divided
+    people.split('').forEach(char => {
+        total[char] -= divided
     });
 
     entry.remove();
@@ -55,8 +54,8 @@ function removeEntry(entryIdNumber) {
 }
 
 function updateResults() {
-    var results = document.getElementById("results");
-    var sum = document.getElementById("sum");
+    let results = document.getElementById("results");
+    let sum = document.getElementById("sum");
 
     let sum_total = 0;
     let newHTML = "";
@@ -70,7 +69,7 @@ function updateResults() {
         }
     });
     results.innerHTML = newHTML
-    sum.innerHTML = "<span>Total: " + sum_total + "</span>";
+    sum.innerHTML = "<span>Total: " + sum_total.toFixed(2) + "</span>";
 }
 
 (() => {
