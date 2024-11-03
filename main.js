@@ -14,8 +14,10 @@ function addEntry() {
     prompt.value.split('').forEach(char => {
         if ((/^[A-Za-z]$/).test(char)) {
             people += char;
-        } else if ((/^\d$/).test(char) || (/^[.,]$/).test(char)) {
+        } else if ((/^\d$/).test(char)) {
             number += char;
+        } else if ((/^[.,]$/).test(char)) {
+            number += '.';
         }
     });
 
