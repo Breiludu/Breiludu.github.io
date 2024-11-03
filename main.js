@@ -16,7 +16,7 @@ function addEntry() {
             people += char;
         } else if ((/^\d$/).test(char)) {
             number += char;
-        } else if ((/^[.,]$/).test(char)) {
+        } else if ((/^[\.,]$/).test(char)) {
             number += '.';
         }
     });
